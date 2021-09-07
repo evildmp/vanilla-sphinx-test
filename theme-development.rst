@@ -13,13 +13,14 @@ Enable the ``vanilla`` theme
 and there is the very bare bones of a Sphinx theme in the directory ``vanilla``.
 
 As soon as you uncomment the line above, Sphinx will no longer be able to build
-the documentation; in the console::
+the documentation using the default them. Exactly what happens at this point seems
+to be the result of a fairly complex interaction between:
 
-    Theme error:
-    An error happened in rendering the page index.
-    Reason: TemplateNotFound('page.html')
+* the theme setting above
+* the ``inherit`` value in the theme's ``theme.conf``
+* whether there are *any* (arbitrarily-named) ``*.html`` files in the theme directory
 
-(``page.html`` is the main entry-point).
+I haven't yet been able to figure this out any better.
 
 
 Theme basics
