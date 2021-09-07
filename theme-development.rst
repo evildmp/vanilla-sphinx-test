@@ -13,7 +13,7 @@ Enable the ``vanilla`` theme
 and there is the very bare bones of a Sphinx theme in the directory ``vanilla``.
 
 As soon as you uncomment the line above, Sphinx will no longer be able to build
-the documentation using the default them. Exactly what happens at this point seems
+the documentation using the default theme. Exactly what happens at this point seems
 to be the result of a fairly complex interaction between:
 
 * the theme setting above
