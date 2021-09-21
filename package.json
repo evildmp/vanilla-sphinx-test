@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "sass": "^1.41.1",
+    "vanilla-framework": "^2.36.0"
+  },
+  "scripts": {
+    "build-css": "sass --load-path=node_modules vanilla/scss:vanilla/_static --style=compressed"
+  }
+}
