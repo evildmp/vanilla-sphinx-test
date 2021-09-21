@@ -45,9 +45,14 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', 'env']
 # a list of builtin themes.
 #
 html_theme_path = ['.']
-# html_theme = 'vanilla'
+html_theme = 'vanilla'
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_static']
+html_static_path = ['vanilla/_static', 'vanilla/scss/']
+
+# Uses global TOC for side nav instead of default local TOC
+html_sidebars = { '**': ['globaltoc.html'] }
+
+theme_globaltoc_maxdepth = 2

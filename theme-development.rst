@@ -2,7 +2,7 @@
 Theme development
 ===============================================
 
-Enable the ``vanilla`` theme
+Enable the Vanilla theme
 ============================
 
 ``conf.py`` includes::
