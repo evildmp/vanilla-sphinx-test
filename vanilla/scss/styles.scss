@@ -3,6 +3,14 @@ $grid-max-width: 92rem;
 
 @include vanilla;
 
+.current {
+  box-shadow: $box-shadow;
+}
+
+.p-strip {
+  background-color: lightblue;
+}
+
 //TODO
 // Add styles for current side nav hover
 // Paragraph icon re style
