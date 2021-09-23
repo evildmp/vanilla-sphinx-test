@@ -48,7 +48,7 @@ html_theme_path = ['.']
 html_theme = 'vanilla'
 
 html_css_files = [
-    'my.css',
+    'styles.css',
 ]
 
 # Add any paths that contain custom static files (such as style sheets) here,
