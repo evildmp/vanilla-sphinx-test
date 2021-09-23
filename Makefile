@@ -21,7 +21,10 @@ help:
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
 run:
-	sphinx-autobuild "$(SOURCEDIR)" "$(BUILDDIR)"
+	. $(VENV); sphinx-autobuild $(ALLSPHINXOPTS) --ignore ".git/*" --ignore "*.scss" . -b dirhtml -a _build/html --host 0.0.0.0 --port 8000
+
+html:
+	. $(VENV); $(SPHINXBUILD) -b dirhtml . _build/html
 
 spelling:
 	sphinx-build -b spelling "$(SOURCEDIR)" "$(BUILDDIR)"
