@@ -8,6 +8,7 @@ SPHINXBUILD   ?= sphinx-build
 SOURCEDIR     = .
 BUILDDIR      = _build
 VENV = env/bin/activate
+PORT = 8000
 
 # Put it first so that "make" without argument is like "make help".
 help:
@@ -20,8 +21,11 @@ help:
 %: Makefile
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
+html:
+	. $(VENV); $(SPHINXBUILD) -b dirhtml . _build/html
+
 run:
-	sphinx-autobuild "$(SOURCEDIR)" "$(BUILDDIR)"
+	. $(VENV); sphinx-autobuild $(ALLSPHINXOPTS) --ignore ".git/*" --ignore "*.scss" . -b dirhtml -a _build/html --host 0.0.0.0 --port $(PORT)
 
 spelling:
 	sphinx-build -b spelling "$(SOURCEDIR)" "$(BUILDDIR)"
