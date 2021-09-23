@@ -3,15 +3,12 @@ $grid-max-width: 92rem;
 
 @include vanilla;
 
-.current {
-  box-shadow: $box-shadow;
+.current.reference.internal {
+  @include vf-highlight-bar($colors--light-theme--text-default, left);
+  background: $colors--light-theme--background-active;
+  color: $colors--light-theme--text-default;
 }
 
-.p-strip {
-  background-color: lightblue;
+.headerlink {
+  color: $colors--light-theme--text-default;
 }
-
-//TODO
-// Add styles for current side nav hover
-// Paragraph icon re style
-// Change screen width for collapsing contents
