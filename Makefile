@@ -25,7 +25,7 @@ html:
 	. $(VENV); $(SPHINXBUILD) -b dirhtml . _build/html
 
 run:
-	. $(VENV); sphinx-autobuild $(ALLSPHINXOPTS) --ignore ".git/*" --ignore "*.scss" . -b dirhtml -a _build/html --host 0.0.0.0 --port $(PORT)
+	. $(VENV); sphinx-autobuild $(ALLSPHINXOPTS) --ignore ".git/*" --ignore "*.scss" . -b dirhtml -a _build/html --host 0.0.0.0 --port 8000
 
 spelling:
 	sphinx-build -b spelling "$(SOURCEDIR)" "$(BUILDDIR)"
