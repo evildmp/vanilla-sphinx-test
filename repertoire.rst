@@ -1,3 +1,6 @@
+:sequential_nav: both
+
+
 ===============================================
 Repertoire
 ===============================================
@@ -61,6 +64,8 @@ Lists
 #. numbered item
 
 
+.. _code-block:
+
 Code-blocks
 -----------
 
@@ -80,6 +85,8 @@ Code-blocks
 
         self._aperture = value
 
+
+.. _notes:
 
 Notes and admonitions
 ---------------------

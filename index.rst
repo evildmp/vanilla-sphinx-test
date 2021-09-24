@@ -1,3 +1,5 @@
+:sequential_nav: prev
+
 ===============================================
 Vanilla Sphinx Test
 ===============================================
@@ -7,6 +9,7 @@ Vanilla Sphinx Test
 
    theme-development
    repertoire
+   feedback
 
 How to use this
 ================
