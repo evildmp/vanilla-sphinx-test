@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 
+{% if meta %}
+  {% set sequential_nav = meta.sequential_nav %}
+{% endif %}
+
 {% block body -%}
   <header id="navigation" class="p-navigation is-dark">
     <div class="p-navigation__row">
@@ -56,26 +60,37 @@
         {% block content %}{{ body }}{% endblock %}
         <footer>
           {% block footer %}
-          <div class="p-article-pagination">
-            {% if prev -%}
-            <a class="p-article-pagination__link--previous" href="{{ prev.link }}">
-              <span class="p-article-pagination__label">{{ _("Previous") }}</span>
-              <span class="p-article-pagination__title">
-                {% if prev.link == pathto(master_doc) %}
-                  {{ _("Home") }}
-                  {% else %}
-                  {{ prev.title }}
-                  {% endif %}
-              </span>
-            {%- endif %}
-            {% if next -%}
-            <a class="p-article-pagination__link--next" href="{{ next.link }}">
-              <span class="p-article-pagination__label">{{ _("Next") }}</span>
-              <span class="p-article-pagination__title">{{ next.title }}</span>
-            </a>
-            {%- endif %}
-          </div>
-  
+
+          {% if sequential_nav %}
+            <div class="p-article-pagination">
+
+              {% if sequential_nav=="prev" or sequential_nav=="both" %}
+                {% if prev -%}
+                  <a class="p-article-pagination__link--previous" href="{{ prev.link }}">
+                    <span class="p-article-pagination__label">{{ _("Previous") }}</span>
+                    <span class="p-article-pagination__title">
+                      {% if prev.link == pathto(master_doc) %}
+                        {{ _("Home") }}
+                        {% else %}
+                        {{ prev.title }}
+                        {% endif %}
+                    </span>
+                {%- endif %}
+              {% endif %}
+
+              {% if sequential_nav=="next" or sequential_nav=="both" %}
+                {% if next -%}
+                  <a class="p-article-pagination__link--next" href="{{ next.link }}">
+                    <span class="p-article-pagination__label">{{ _("Next") }}</span>
+                    <span class="p-article-pagination__title">{{ next.title }}</span>
+                  </a>
+              {%- endif %}
+            {% endif %}
+
+            </div>
+          {% endif %}
+
+
           <div class="related-information">
             {%- if show_copyright %}
               {%- if hasdoc('copyright') %}
@@ -99,7 +114,7 @@
               {% trans -%}
                 Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
                 and
-                <a href="https://vanillaframework.io/">Vanlla theme</a>.
+                <a href="https://vanillaframework.io/">Vanilla theme</a>.
               {%- endtrans %}
             {%- endif %}
             {%- if show_source and has_source and sourcename %}
