@@ -6,7 +6,8 @@ Vanilla Sphinx Test
 
 .. toctree::
    :maxdepth: 1
-
+   
+   index
    theme-development
    repertoire
    feedback
