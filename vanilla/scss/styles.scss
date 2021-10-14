@@ -12,3 +12,24 @@ $grid-max-width: 92rem;
 .headerlink {
   color: $colors--light-theme--text-default;
 }
+
+//The following is a workaround as after spending a while exploring I can't work out how to escape the -- in the class name from the .rst file
+.p-notification-information {
+  @extend .p-notification--information;
+}
+
+.p-notification-negative {
+  @extend .p-notification--negative;
+}
+
+.p-notification-caution {
+  @extend .p-notification--caution;
+}
+
+.p-notification-positive {
+  @extend .p-notification--positive;
+}
+
+li > p {
+  margin-bottom: 0;
+}
