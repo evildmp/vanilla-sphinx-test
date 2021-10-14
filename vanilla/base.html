@@ -55,7 +55,8 @@
       {% if css|attr("filename") -%}
         {{ css_tag(css) }}
       {%- else -%}
-        <link rel="stylesheet" href="./scss/styles.scss" type="text/css" />
+      <link rel="stylesheet" href="./scss/styles.scss" type="text/css" />
+      <link rel="stylesheet" href="./scss/pygment.scss" type="text/css" />
       {%- endif %}
     {% endfor -%}
     {%- endblock regular_styles -%}

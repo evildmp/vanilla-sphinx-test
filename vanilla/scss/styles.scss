@@ -1,6 +1,8 @@
 @import "vanilla-framework/scss/vanilla";
 $grid-max-width: 92rem;
 
+@import "pygment";
+
 @include vanilla;
 
 .current.reference.internal {
