@@ -1,4 +1,4 @@
-:sequential_nav: next
+:sequential_nav: both
 
 =====================
 Feedback on the theme

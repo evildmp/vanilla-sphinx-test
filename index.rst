@@ -1,15 +1,6 @@
-:sequential_nav: prev
-
 ===============================================
 Vanilla Sphinx Test
 ===============================================
-
-.. toctree::
-   :maxdepth: 1
-
-   theme-development
-   repertoire
-   feedback
 
 How to use this
 ================
@@ -32,3 +23,11 @@ Use ``make html`` to build the documentation, or better, have it served on port
 8000 (it will refresh the page on every save)::
 
     make run
+
+
+.. toctree::
+   :hidden:
+
+   Vanilla <self>
+   about-repository/index
+   more-sub-pages/index
