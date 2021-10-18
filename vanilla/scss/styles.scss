@@ -15,65 +15,58 @@ $grid-max-width: 92rem;
   color: $colors--light-theme--text-default;
 }
 
+// Sphinx adds paragraphs inside li elements - this removes unnecessary margin
 li > p {
   margin-bottom: 0;
 }
 
-//Refactor notification styling to match
+// Reuses style from p-notification pattern
+// https://github.com/canonical-web-and-design/vanilla-framework/blob/main/scss/_patterns_notifications.scss#L21
 .admonition {
-  @extend %vf-is-bordered;
-  @extend %vf-bg--x-light;
+  @extend %vf-notification;
 
-  background-position: $sph-inner $notification-icon-vert-offset;
-  background-repeat: no-repeat;
-  background-size: map-get($icon-sizes, default);
-  border-radius: 0 $border-radius $border-radius 0;
-  margin-bottom: $spv-outer--scaleable;
-  padding-bottom: calc(#{$spv-inner--small} - 1px);
-  padding-left: $notification-content-icon-space;
-  padding-top: calc(#{$spv-inner--small} - 1px);
-  position: relative;
-
-  &::before {
-    height: auto;
-    width: 0.1875rem;
-    bottom: -1px;
-    top: -1px;
-    z-index: 1;
-    content: "";
-    position: absolute;
-    left: 0;
-  }
-
+  // This is reducing the bottom margin on the content text with no class name
   > p {
     margin-bottom: $notification-text-margin-bottom;
   }
 
+  // Reusing styles from .p-notification--information
+  // https://github.com/canonical-web-and-design/vanilla-framework/blob/main/scss/_patterns_notifications.scss#L190
   &.note {
     @include vf-highlight-bar($color-information, left, true);
     @include vf-icon-info($color-mid-dark);
   }
 
+  // Reusing styles from .p-notification--negative
+  // https://github.com/canonical-web-and-design/vanilla-framework/blob/main/scss/_patterns_notifications.scss#L181
   &.danger {
     @include vf-highlight-bar($color-negative, left, true);
     @include vf-icon-error;
   }
 
+  // Reusing styles from p-notification--caution
+  // https://github.com/canonical-web-and-design/vanilla-framework/blob/main/scss/_patterns_notifications.scss#L172
   &.caution {
     @include vf-highlight-bar($color-caution, left, true);
     @include vf-icon-warning;
   }
 
+  // Reusing styles from p-notification__title
+  // https://github.com/canonical-web-and-design/vanilla-framework/blob/main/scss/_patterns_notifications.scss#L81
   .admonition-title {
+    @extend %common-default-text-properties;
+
     font-size: 1rem;
     font-weight: $font-weight-bold;
-    line-height: map-get($line-heights, default-text);
-    margin-bottom: 0.2rem !important;
-    margin-top: 0.4005rem;
-    padding: 0;
+    margin: 0;
+  }
+
+  .admonition-title + p {
+    margin-top: 0 !important;
+    padding-top: 0;
   }
 }
-
+// Removing large left padding when there is no icon
 .admonition-security-notice {
   padding-left: 1rem;
 }
