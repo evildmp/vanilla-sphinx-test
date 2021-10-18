@@ -90,53 +90,21 @@ Code-blocks
 Notes and admonitions
 ---------------------
 
-.. container:: \p-notification--information\
+.. note::
 
-   .. container:: p-notification__content
+   Please turn the lights off if you are the last to leave.
 
-        .. rst-class:: p-notification__title 
-      
-          Note
 
-        .. rst-class:: p-notification__message
+.. danger::
 
-          Please turn the lights off if you are the last to leave.
+   Please turn the lights off if you are the last to leave.
+
+.. caution::
+
+   Please turn the lights off if you are the last to leave.
 
 As well as ``note``, you can use ``attention``, ``caution``, ``danger``,
 ``error``, ``hint``, ``important``, ``tip``, ``warning``, ``seealso``.
-
-.. container:: \p-notification--negative\
-
-   .. rst-class:: p-notification__title 
-   
-      Danger
-
-   .. rst-class:: p-notification__message
-
-   Please turn the lights off if you are the last to leave.
-
-
-.. container:: \p-notification--caution\
-
-   .. rst-class:: p-notification__title 
-   
-      Warning
-
-   .. rst-class:: p-notification__message
-
-   Please turn the lights off if you are the last to leave.
-
-
-.. container:: \p-notification--positive\
-
-   .. rst-class:: p-notification__title 
-   
-      Success
-
-   .. rst-class:: p-notification__message
-
-   Please turn the lights off if you are the last to leave.
-
 
 .. admonition:: Security notice
 
