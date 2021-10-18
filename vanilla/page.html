@@ -34,10 +34,19 @@
       </nav>
     </div>
   </header>
+  <section class="p-strip--light is-shallow">
+    <div class="u-fixed-width">
+      <form class="p-search-box u-no-margin--bottom">
+        <input type="search" class="p-search-box__input" name="search" placeholder="Search" required="" autocomplete="on">
+        <button type="reset" class="p-search-box__reset"><i class="p-icon--close"></i></button>
+        <button type="submit" class="p-search-box__button"><i class="p-icon--search"></i></button>
+      </form>
+    </div>
+  </section>
   <section class="p-strip is-shallow">
     <div class="row">
       <div class="col-2">
-        <div class="p-side-navigation--raw-html" id="drawer">
+        <div class="p-side-navigation--raw-html is-sticky" id="drawer">
           <a href="#drawer" class="p-side-navigation__toggle js-drawer-toggle" aria-controls="drawer">
             Toggle side navigation
           </a>
