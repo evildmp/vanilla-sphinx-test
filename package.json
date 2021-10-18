@@ -4,6 +4,6 @@
     "vanilla-framework": "^2.36.0"
   },
   "scripts": {
-    "build-css": "sass --load-path=node_modules vanilla/scss:vanilla/_static --style=compressed"
+    "build-css": "sass --load-path=node_modules vanilla/scss:vanilla/static --style=compressed"
   }
 }
