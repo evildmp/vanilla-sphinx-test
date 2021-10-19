@@ -2,6 +2,7 @@
 
 {% if meta %}
   {% set sequential_nav = meta.sequential_nav %}
+  {% set hide_toc = meta.hide_toc %}
 {% endif %}
 
 {% block body -%}
@@ -65,7 +66,11 @@
           </div>
         </div>
       </div>
+      {% if hide_toc=="true" %}
+      <main class="col-8">
+      {% else %}
       <main class="col-7">
+      {% endif %}
         {% block content %}{{ body }}{% endblock %}
         <footer>
           {% block footer %}
@@ -137,6 +142,7 @@
           {% endblock footer %}
         </footer>
       </main>
+      {% if not hide_toc=="true" %}
       <div class="col-3">
         <aside class="p-side-navigation--raw-html is-sticky">
           {% block right_sidebar %}
@@ -147,6 +153,7 @@
           {% endblock right_sidebar %}
         </aside>
       </div>
+      {% endif %}
     </div>
   </section>
 
