@@ -1,5 +1,5 @@
 :sequential_nav: both
-
+:hide-toc:
 
 ===============================================
 Repertoire
