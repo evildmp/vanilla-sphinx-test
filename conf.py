@@ -44,8 +44,8 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', 'env']
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme_path = ['.']
-html_theme = 'vanilla'
+
+html_theme = 'furo'
 
 # html_css_files = [
 #     'styles.css',
@@ -59,11 +59,11 @@ html_theme = 'vanilla'
 # so a file named "default.css" will overwrite the builtin "default.css".
 
 # Uses global TOC for side nav instead of default local TOC
-html_sidebars = {
-    '**': [
-        'globaltoc.html',
-    ]
-}
+# html_sidebars = {
+#     '**': [
+#         'globaltoc.html',
+#     ]
+# }
 #
 # theme_globaltoc_maxdepth = 2
 # theme_globaltoc_includehidden = True
