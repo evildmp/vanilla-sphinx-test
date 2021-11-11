@@ -18,8 +18,8 @@
 # -- Project information -----------------------------------------------------
 
 project = 'Vanilla Sphinx Test'
-copyright = '2021, Daniele'
-author = 'Daniele'
+copyright = '2021, authors'
+author = 'the various contributors'
 
 
 # -- General configuration ---------------------------------------------------
