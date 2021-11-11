@@ -90,26 +90,52 @@ Code-blocks
 Notes and admonitions
 ---------------------
 
+.. admonition:: Security notice
+
+   The generic ``admonition`` directive allows you to provide a title, as
+   above.
+
+Other admonition types:
+
 .. note::
 
    Please turn the lights off if you are the last to leave.
 
-
-.. danger::
+.. warning::
 
    Please turn the lights off if you are the last to leave.
+
+.. important::
+
+   Please turn the lights off if you are the last to leave.
+
+.. seealso::
+
+   * Reference
+   * Explanation
+
+Probably a generic styling can be used for the following:
 
 .. caution::
 
    Please turn the lights off if you are the last to leave.
 
-As well as ``note``, you can use ``attention``, ``caution``, ``danger``,
-``error``, ``hint``, ``important``, ``tip``, ``warning``, ``seealso``.
+.. danger::
 
-.. admonition:: Security notice
+   Please turn the lights off if you are the last to leave.
 
-   The generic ``admonition`` directive allows you to provide a title, as
-   above.
+.. error::
+
+   Please turn the lights off if you are the last to leave.
+
+.. hint::
+
+   Please turn the lights off if you are the last to leave.
+
+.. tip::
+
+   Please turn the lights off if you are the last to leave.
+
 
 Tables
 ------

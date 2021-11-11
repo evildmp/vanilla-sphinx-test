@@ -33,3 +33,4 @@ Use ``make html`` to build the documentation, or better, have it served on port
    more-sub-pages/index
    tutorials/index
    tabs
+   a_too_long_title_that_would_be_better_wrapped <https://example.com>

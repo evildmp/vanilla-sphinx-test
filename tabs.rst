@@ -1,5 +1,7 @@
+.. _tabs:
+
 ===============
-Example of tabs
+Tabs example
 ===============
 
 .. tabs::
@@ -14,4 +16,17 @@ Example of tabs
 
    .. tab:: Oranges
 
-      Oranges are orange.
+      Oranges are :ref:`tabs`.
+
+      A reference to :class:`some_module.SomeClass`.
+
+      A reference to :meth:`some_module.SomeClass.some_method`.
+
+
+..  module:: some_module
+
+This page is all about the ``some_module``.
+
+..  class:: SomeClass
+
+    ..  method:: some_method
