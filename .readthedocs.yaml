@@ -28,5 +28,6 @@ build:
 #    install:
 #    - requirements: docs/requirements.txt
 
-sphinx.builder:
-  dirhtml
+sphinx:
+  builder:
+    dirhtml
