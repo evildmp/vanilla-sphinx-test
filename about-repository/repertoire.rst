@@ -1,5 +1,4 @@
 :sequential_nav: both
-:hide-toc:
 
 ===============================================
 Repertoire of basic content
