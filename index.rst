@@ -32,3 +32,4 @@ Use ``make html`` to build the documentation, or better, have it served on port
    about-repository/index
    more-sub-pages/index
    tutorials/index
+   tabs
