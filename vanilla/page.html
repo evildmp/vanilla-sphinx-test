@@ -2,7 +2,9 @@
 
 {% if meta %}
   {% set sequential_nav = meta.sequential_nav %}
-  {% set hide_toc = "hide-toc" in meta %}
+  {% if 'hide_toc' in meta %}
+    {% set hide_toc = meta.hide_toc %}
+  {% endif %}
 {% endif %}
 
 {% block body -%}
