@@ -1,7 +1,9 @@
 {% extends "base.html" %}
 
 {% if meta %}
-  {% set sequential_nav = meta.sequential_nav %}
+  {% if 'sequential_nav' in meta %}
+    {% set sequential_nav = meta.sequential_nav %}
+  {% endif %}
   {% set hide_toc = "hide-toc" in meta %}
 {% endif %}
 
