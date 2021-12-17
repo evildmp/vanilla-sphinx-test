@@ -37,11 +37,13 @@
   </header>
   <section class="p-strip--light is-shallow">
     <div class="u-fixed-width">
-      <form class="p-search-box u-no-margin--bottom">
-        <input type="search" class="p-search-box__input" name="search" placeholder="Search" required="" autocomplete="on">
-        <button type="reset" class="p-search-box__reset"><i class="p-icon--close"></i></button>
-        <button type="submit" class="p-search-box__button"><i class="p-icon--search"></i></button>
-      </form>
+     <form class="p-search-box u-no-margin--bottom" method="get" action="{{ pathto('search') }}" role="search">
+       <input class="p-search-box__input" type="text" placeholder={{ _("Search") }} placeholder="Search" name="q" aria-label="{{ _("Search" )}}">
+       <input type="hidden" name="check_keywords" value="yes">
+       <input type="hidden" name="area" value="default">
+       <button type="reset" class="p-search-box__reset"><i class="p-icon--close"></i></button>
+       <button type="submit" class="p-search-box__button"><i class="p-icon--search"></i></button>
+     </form>
     </div>
   </section>
   <section class="p-strip is-shallow">
@@ -67,9 +69,9 @@
         </div>
       </div>
       {% if hide_toc %}
-      <main class="col-8">
+      <main class="col-8" role="main">
       {% else %}
-      <main class="col-7">
+      <main class="col-7" role="main">
       {% endif %}
         {% block content %}{{ body }}{% endblock %}
         <footer>
