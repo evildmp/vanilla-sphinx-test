@@ -89,7 +89,7 @@ li > p {
   @extend .p-table-of-contents__link;
 }
 
-.is-sticky {
+.p-table-of-contents.is-sticky {
   max-height: 100vh;
   overflow-y: auto;
   position: sticky;
