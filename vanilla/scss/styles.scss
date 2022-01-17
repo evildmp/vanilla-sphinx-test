@@ -70,3 +70,28 @@ li > p {
 .admonition-security-notice {
   padding-left: 1rem;
 }
+
+// Toc custom styles
+.p-table-of-contents__nav > ul > li:first-child > a {
+  display: none;
+}
+
+.p-table-of-contents__nav > ul {
+  @extend .p-list;
+}
+
+.p-table-of-contents__nav > ul > li > ul {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.reference.internal {
+  @extend .p-table-of-contents__link;
+}
+
+.is-sticky {
+  max-height: 100vh;
+  overflow-y: auto;
+  position: sticky;
+  top: 0;
+}
