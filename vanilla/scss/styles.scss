@@ -70,3 +70,20 @@ li > p {
 .admonition-security-notice {
   padding-left: 1rem;
 }
+
+.headerlink {
+  display: none;
+}
+
+h1:is(:focus, :hover),
+h2:is(:focus, :hover),
+h3:is(:focus, :hover),
+h4:is(:focus, :hover),
+h5:is(:focus, :hover),
+h6:is(:focus, :hover) {
+  .headerlink {
+    display: inline;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+}
