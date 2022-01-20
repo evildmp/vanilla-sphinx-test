@@ -11,10 +11,6 @@ $grid-max-width: 92rem;
   color: $colors--light-theme--text-default;
 }
 
-.headerlink {
-  color: $colors--light-theme--text-default;
-}
-
 // Sphinx adds paragraphs inside li elements - this removes unnecessary margin
 li > p {
   margin-bottom: 0;
@@ -81,9 +77,11 @@ h3:is(:focus, :hover),
 h4:is(:focus, :hover),
 h5:is(:focus, :hover),
 h6:is(:focus, :hover) {
-  .headerlink {
+  .headerlink:is(:link, :hover, :focus, :visited) {
     display: inline;
     margin-bottom: 0;
     padding-bottom: 0;
+    color: $colors--light-theme--text-muted;
+    text-decoration: none;
   }
 }
