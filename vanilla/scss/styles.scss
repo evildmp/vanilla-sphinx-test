@@ -85,3 +85,34 @@ h6:is(:focus, :hover) {
     text-decoration: none;
   }
 }
+
+// Toc custom styles
+
+// Hide first link in TOC which contains title of current page
+.p-table-of-contents__nav > ul > li:first-child > a {
+  display: none;
+}
+
+// Extend the list style to the <ul> element in the nav, as we can't add the class directly to the dynamically rendered markup
+.p-table-of-contents__nav > ul {
+  @extend .p-list;
+}
+
+// Remove indentation from the second list item, moving it to where the first list item would be
+.p-table-of-contents__nav > ul > li > ul {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+// Add toc link class to all dynamically rendered links
+.reference.internal {
+  @extend .p-table-of-contents__link;
+}
+
+// Ensure the toc is sticky when scrolling
+.p-table-of-contents.is-sticky {
+  max-height: 100vh;
+  overflow-y: auto;
+  position: sticky;
+  top: 0;
+}
