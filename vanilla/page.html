@@ -127,14 +127,18 @@
       </main>
       {% if not hide_toc %}
       <div class="col-3">
-        <aside class="p-side-navigation--raw-html is-sticky">
-          {% block right_sidebar %}
-              <h3>
-                {{ _("Contents") }}
-              </h3>
+        {% block right_sidebar %}
+        <aside class="p-table-of-contents is-sticky">
+          <div class="p-table-of-contents__section">
+            <h3 class="p-table-of-contents__header">
+              {{ _("Contents") }}
+            </h3>
+            <nav class="p-table-of-contents__nav" aria-label="Table of contents">
               {{ toc }}
-          {% endblock right_sidebar %}
+            </nav>
+          </div>
         </aside>
+        {% endblock right_sidebar %}
       </div>
       {% endif %}
     </div>
