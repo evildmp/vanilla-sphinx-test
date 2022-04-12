@@ -11,10 +11,6 @@ $grid-max-width: 92rem;
   color: $colors--light-theme--text-default;
 }
 
-.headerlink {
-  color: $colors--light-theme--text-default;
-}
-
 // Sphinx adds paragraphs inside li elements - this removes unnecessary margin
 li > p {
   margin-bottom: 0;
@@ -69,4 +65,54 @@ li > p {
 // Removing large left padding when there is no icon
 .admonition-security-notice {
   padding-left: 1rem;
+}
+
+.headerlink {
+  display: none;
+}
+
+h1:is(:focus, :hover),
+h2:is(:focus, :hover),
+h3:is(:focus, :hover),
+h4:is(:focus, :hover),
+h5:is(:focus, :hover),
+h6:is(:focus, :hover) {
+  .headerlink:is(:link, :hover, :focus, :visited) {
+    display: inline;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    color: $colors--light-theme--text-muted;
+    text-decoration: none;
+  }
+}
+
+// Toc custom styles
+
+// Hide first link in TOC which contains title of current page
+.p-table-of-contents__nav > ul > li:first-child > a {
+  display: none;
+}
+
+// Extend the list style to the <ul> element in the nav, as we can't add the class directly to the dynamically rendered markup
+.p-table-of-contents__nav > ul {
+  @extend .p-list;
+}
+
+// Remove indentation from the second list item, moving it to where the first list item would be
+.p-table-of-contents__nav > ul > li > ul {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+// Add toc link class to all dynamically rendered links
+.reference.internal {
+  @extend .p-table-of-contents__link;
+}
+
+// Ensure the toc is sticky when scrolling
+.p-table-of-contents.is-sticky {
+  max-height: 100vh;
+  overflow-y: auto;
+  position: sticky;
+  top: 0;
 }

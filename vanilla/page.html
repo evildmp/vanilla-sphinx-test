@@ -8,42 +8,18 @@
 {% endif %}
 
 {% block body -%}
-  <header id="navigation" class="p-navigation is-dark">
-    <div class="p-navigation__row">
-      <div class="p-navigation__banner">
-        <div class="p-navigation__logo">
-          <a class="p-navigation__item" href="{{ pathto(master_doc) }}">
-            <img class="p-navigation__image" src="https://assets.ubuntu.com/v1/3c7954dd-logo-canonical-white.svg" alt="{{ docstitle }}" width="95">
-          </a>
-        </div>
-        <a href="#navigation" class="p-navigation__toggle--open" title="menu">Menu</a>
-        <a href="#navigation-closed" class="p-navigation__toggle--close" title="close menu">Close menu</a>
-      </div>
-      <nav class="p-navigation__nav" aria-label="Example main navigation">
-        <ul class="p-navigation__items">
-          <li class="p-navigation__item is-selected">
-            <a class="p-navigation__link" href="#">Products</a>
-          </li>
-          <li class="p-navigation__item">
-            <a class="p-navigation__link" href="#">Services</a>
-          </li>
-          <li class="p-navigation__item">
-            <a class="p-navigation__link" href="#">Partners</a>
-          </li>
-          <li class="p-navigation__item">
-            <a class="p-navigation__link" href="#">About</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+
+  {% include "header.html" %}
+
   <section class="p-strip--light is-shallow">
     <div class="u-fixed-width">
-      <form class="p-search-box u-no-margin--bottom">
-        <input type="search" class="p-search-box__input" name="search" placeholder="Search" required="" autocomplete="on">
-        <button type="reset" class="p-search-box__reset"><i class="p-icon--close"></i></button>
-        <button type="submit" class="p-search-box__button"><i class="p-icon--search"></i></button>
-      </form>
+     <form class="p-search-box u-no-margin--bottom" method="get" action="{{ pathto('search') }}" role="search">
+       <input class="p-search-box__input" type="text" placeholder={{ _("Search") }} placeholder="Search" name="q" aria-label="{{ _("Search" )}}">
+       <input type="hidden" name="check_keywords" value="yes">
+       <input type="hidden" name="area" value="default">
+       <button type="reset" class="p-search-box__reset"><i class="p-icon--close"></i></button>
+       <button type="submit" class="p-search-box__button"><i class="p-icon--search"></i></button>
+     </form>
     </div>
   </section>
   <section class="p-strip is-shallow">
@@ -69,9 +45,9 @@
         </div>
       </div>
       {% if hide_toc %}
-      <main class="col-8">
+      <main class="col-8" role="main">
       {% else %}
-      <main class="col-7">
+      <main class="col-7" role="main">
       {% endif %}
         {% block content %}{{ body }}{% endblock %}
         <footer>
@@ -91,6 +67,7 @@
                         {{ prev.title }}
                         {% endif %}
                     </span>
+                  </a>
                 {%- endif %}
               {% endif %}
 
@@ -150,14 +127,18 @@
       </main>
       {% if not hide_toc %}
       <div class="col-3">
-        <aside class="p-side-navigation--raw-html is-sticky">
-          {% block right_sidebar %}
-              <h3>
-                {{ _("Contents") }}
-              </h3>
+        {% block right_sidebar %}
+        <aside class="p-table-of-contents is-sticky">
+          <div class="p-table-of-contents__section">
+            <h3 class="p-table-of-contents__header">
+              {{ _("Contents") }}
+            </h3>
+            <nav class="p-table-of-contents__nav" aria-label="Table of contents">
               {{ toc }}
-          {% endblock right_sidebar %}
+            </nav>
+          </div>
         </aside>
+        {% endblock right_sidebar %}
       </div>
       {% endif %}
     </div>
