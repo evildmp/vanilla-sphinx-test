@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 
 {% if meta %}
-  {% if 'sequential_nav' in meta %}
-    {% set sequential_nav = meta.sequential_nav %}
+  {% set sequential_nav = meta.sequential_nav %}
+  {% if 'hide_toc' in meta %}
+    {% set hide_toc = meta.hide_toc %}
   {% endif %}
-  {% set hide_toc = "hide-toc" in meta %}
 {% endif %}
 
 {% block body -%}
